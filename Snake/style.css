@@ -1,4 +1,11 @@
 #MySnake{
-	margin-left: 16%;
-	margin-top: 8%;
+	position: relative;
+	margin-top: -90px;
+}
+
+#Board{
+	position: relative;
+	left : 50%;
+	top: 10px;
+
 }

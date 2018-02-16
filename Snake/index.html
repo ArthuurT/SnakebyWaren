@@ -2,26 +2,56 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 
-<!-- en-tete du document -->
+	<!-- en-tete du document -->
 
-<head>
+	<head>
 
-  <title>SnakeByWaren</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="p5.min.js"></script>
-  <script src="debut.js"></script>
-  <script src="snake.js"></script>
-
-</head>
-
-<!-- corps du document -->
-
-<div id='MySnake'></div>
-
-<body>
+	  <title>SnakeByWaren</title>
+	  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	  <link rel="stylesheet" href="style.css" />
+	  <script src="p5.min.js"></script>
+	  <script src="prog.js"></script>
+	  <script src="snake.js"></script>
+	  <script language="javascript" type="text/javascript" src="p5.dom.js"></script>
+	  <script charset="utf-8" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 
 
+	</head>
 
-</body>
+	<!-- corps du document -->
+
+	<div id='Board'> Stats
+		<p id='Score'></p>
+		<p id='Mort'></p>	
+	</div>
+	
+	<div id='MySnake'></div>
+
+
+	<body>
+
+	</body>
+
+
+
+
+
+
+
+
+
+
+	<script>
+		var arrow_keys_handler = function(e){
+	    	switch(e.keyCode){
+		        case 37: case 39: case 38:  case 40: // Arrow keys
+		        case 32: e.preventDefault(); break; // Space
+		        default: break; // do not block other keys
+	    	}
+		};
+		window.addEventListener("keydown", arrow_keys_handler, false);
+	</script>
+
+
+
 </html>

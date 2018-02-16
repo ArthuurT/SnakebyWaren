@@ -1,15 +1,24 @@
 var s;
 var scl = 20;
 var food;
+var sonScore;
+var updateScore, updateMort;
+
 
 function setup(){
 
-  	var myCanvas = createCanvas(800, 480);
+	// Parent: MySnake ==> Son: Canvas
+  	var myCanvas = createCanvas(600, 600);
   	myCanvas.parent('MySnake');
-  	s = new Snake();
-  	frameRate(10);
-  	pickLocation();
 
+  	// Score balise
+	updateScore = document.getElementById('Score');
+	// Mort balise
+	updateMort = document.getElementById('Mort');
+
+  	s = new Snake();
+  	frameRate(20);
+  	pickLocation();
 }
 
 function pickLocation(){
@@ -19,18 +28,26 @@ function pickLocation(){
 	food.mult(scl);
 }
 
-function draw(){
 
+function draw(){
 	background(120);
+	s.death();
 	s.update();
 	s.show();
 
-	if(s.eat(food)){
-		pickLocation();
-	}
+	updateScore.innerHTML = "Score: " + s.total;
+	updateMort.innerHTML = "Mort: " + s.morts;
+
+	if(s.eat(food)){pickLocation();}
 
 	fill(255,0,120);
 	rect(food.x,food.y,scl,scl);
+
+	isWin();
+}
+
+function mousePressed(){
+	s.total++;
 }
 
 function keyPressed(){
@@ -42,5 +59,13 @@ function keyPressed(){
 		s.dir(-1,0);
 	}else if(keyCode === RIGHT_ARROW){
 		s.dir(1,0);
+	}
+}
+
+function isWin(){
+	if(s.total == 10){
+			textSize(20);
+			text("Victoire",height/2-40,scl+10);
+			noLoop();
 	}
 }
