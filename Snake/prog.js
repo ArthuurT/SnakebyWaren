@@ -13,11 +13,10 @@ function setup(){
 
   	// Score balise
 	updateScore = document.getElementById('Score');
-	// Mort balise
 	updateMort = document.getElementById('Mort');
 
   	s = new Snake();
-  	frameRate(20);
+  	frameRate(15);
   	pickLocation();
 }
 
@@ -30,7 +29,7 @@ function pickLocation(){
 
 
 function draw(){
-	background(120);
+	background('#172EE1');
 	s.death();
 	s.update();
 	s.show();
@@ -40,14 +39,10 @@ function draw(){
 
 	if(s.eat(food)){pickLocation();}
 
-	fill(255,0,120);
+	fill('#071057');
 	rect(food.x,food.y,scl,scl);
 
 	isWin();
-}
-
-function mousePressed(){
-	s.total++;
 }
 
 function keyPressed(){
@@ -64,8 +59,10 @@ function keyPressed(){
 
 function isWin(){
 	if(s.total == 10){
+			chronoStop();
 			textSize(20);
 			text("Victoire",height/2-40,scl+10);
+			updateScore.innerHTML = "Score: " + s.total
 			noLoop();
 	}
 }

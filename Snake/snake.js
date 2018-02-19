@@ -4,7 +4,7 @@ function Snake(){
 	this.xspeed = 0;
 	this.yspeed = 0;
 	this.total = 0;
-	this.morts = 0
+	this.morts = 0;
 	this.tail = [];
 
 
@@ -51,7 +51,7 @@ function Snake(){
 	}
 
 	this.show = function(){
-		fill(255);
+		fill('#EDEA18');
 		for(var i = 0; i < this.total; i++){
 			rect(this.tail[i].x,this.tail[i].y,scl,scl);
 		}
