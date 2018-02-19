@@ -6,40 +6,34 @@
 
 	<head>
 
-	  <title>SnakeByWaren</title>
+	  <title>Snake</title>
 	  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 	  <link rel="stylesheet" href="style.css" />
 	  <script src="p5.min.js"></script>
 	  <script src="prog.js"></script>
 	  <script src="snake.js"></script>
+	  <script src="chrono.js"></script>
 	  <script language="javascript" type="text/javascript" src="p5.dom.js"></script>
 	  <script charset="utf-8" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 
 
 	</head>
 
-	<!-- corps du document -->
+	<body onload = "chronoStart()">
 
-	<div id='Board'> Stats
-		<p id='Score'></p>
-		<p id='Mort'></p>	
-	</div>
-	
-	<div id='MySnake'></div>
+		<!-- corps du document -->
 
+		<div id='Title'>Snake</div>
 
-	<body>
+		<div id='Board'> Stats
+			<p id='Score'></p>
+			<p id='Mort'></p>
+			<p id="chronotime">0:00:00:00</p>
+		</div>
+
+		<div id='MySnake'></div>
 
 	</body>
-
-
-
-
-
-
-
-
-
 
 	<script>
 		var arrow_keys_handler = function(e){

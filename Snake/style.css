@@ -1,11 +1,36 @@
+body{
+	background-color: #071057;
+}
+
+
 #MySnake{
-	position: relative;
-	margin-top: -90px;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+
 }
 
 #Board{
 	position: relative;
-	left : 50%;
-	top: 10px;
+	left : 70%;
+	top: 50px;
 
+}
+
+#Title{
+	position: relative;
+	left: 70%;
+}
+
+#Title,#Board{
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 50px;
+	letter-spacing: -1.6px;
+	word-spacing: -4px;
+	color: #EDEA18;
+	font-weight: normal;
+	text-decoration: none solid rgb(68, 68, 68);
+	font-style: italic;
+	font-variant: small-caps;
+	text-transform: capitalize;
 }
