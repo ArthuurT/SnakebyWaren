@@ -1,36 +1,47 @@
 body{
-	background-color: #071057;
+	background-color: #5b5857;
 }
 
 
 #MySnake{
 	position: absolute;
-	left: 10px;
-	top: 10px;
-
-}
-
-#Board{
-	position: relative;
-	left : 70%;
-	top: 50px;
-
-}
-
-#Title{
-	position: relative;
-	left: 70%;
+	left: 0px;
+	top: 0px;
+	margin-top: 40px;
+	margin-left: 40px;
 }
 
 #Title,#Board{
 	font-family: Tahoma, Geneva, sans-serif;
 	font-size: 50px;
 	letter-spacing: -1.6px;
-	word-spacing: -4px;
 	color: #EDEA18;
 	font-weight: normal;
 	text-decoration: none solid rgb(68, 68, 68);
 	font-style: italic;
 	font-variant: small-caps;
 	text-transform: capitalize;
+}
+
+
+#Board{
+	margin-left : 67%;
+	top: 50px;
+	font-size: 30px;
+	text-align: center;
+
+}
+
+#Title{
+	position: relative;
+	margin-left: 80%;
+}
+
+#chronotime,#Score,#Mort{
+	color:#0ac3e8;
+}
+
+#isWin{
+	font-size: 20px;
+	letter-spacing: 0;
 }

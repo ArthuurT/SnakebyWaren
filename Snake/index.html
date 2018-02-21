@@ -7,7 +7,7 @@
 	<head>
 
 	  <title>Snake</title>
-	  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	  <meta charset="utf-8" http-equiv="Content-Type" content="text/html" />
 	  <link rel="stylesheet" href="style.css" />
 	  <script src="p5.min.js"></script>
 	  <script src="prog.js"></script>
@@ -23,12 +23,14 @@
 
 		<!-- corps du document -->
 
-		<div id='Title'>Snake</div>
+		<div id='Title'></div><br><br><br>
 
-		<div id='Board'> Stats
-			<p id='Score'></p>
-			<p id='Mort'></p>
-			<p id="chronotime">0:00:00:00</p>
+		<div id='Board'><br>
+							<p id='Level'>Level 1</p>
+			Your Score		<br><p id='Score'></p>
+			Death Count	<br><p id='Mort'></p>
+			Time			<br><p id='chronotime'>00:00:00</p>
+								<p id='isWin'></p>
 		</div>
 
 		<div id='MySnake'></div>
@@ -44,6 +46,7 @@
 	    	}
 		};
 		window.addEventListener("keydown", arrow_keys_handler, false);
+		//window.onscroll = function () { window.scrollTo(0, 0); };
 	</script>
 
 

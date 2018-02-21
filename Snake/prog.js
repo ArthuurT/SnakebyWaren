@@ -2,21 +2,22 @@ var s;
 var scl = 20;
 var food;
 var sonScore;
-var updateScore, updateMort;
+var updateScore, updateMort, updateWin;
 
 
 function setup(){
 
 	// Parent: MySnake ==> Son: Canvas
-  	var myCanvas = createCanvas(600, 600);
+  	var myCanvas = createCanvas(800, 640);
   	myCanvas.parent('MySnake');
 
   	// Score balise
 	updateScore = document.getElementById('Score');
 	updateMort = document.getElementById('Mort');
+	updateWin = document.getElementById('isWin');
 
   	s = new Snake();
-  	frameRate(15);
+  	frameRate(17);
   	pickLocation();
 }
 
@@ -29,20 +30,20 @@ function pickLocation(){
 
 
 function draw(){
-	background('#172EE1');
+	background('#232222');
 	s.death();
 	s.update();
 	s.show();
 
-	updateScore.innerHTML = "Score: " + s.total;
-	updateMort.innerHTML = "Mort: " + s.morts;
+	updateScore.innerHTML = s.total;
+	updateMort.innerHTML =  s.morts;
+
+	isWin();
 
 	if(s.eat(food)){pickLocation();}
 
-	fill('#071057');
+	fill('#0ac3e8');
 	rect(food.x,food.y,scl,scl);
-
-	isWin();
 }
 
 function keyPressed(){
@@ -58,11 +59,10 @@ function keyPressed(){
 }
 
 function isWin(){
-	if(s.total == 10){
+	if(s.total == 5){
 			chronoStop();
-			textSize(20);
-			text("Victoire",height/2-40,scl+10);
 			updateScore.innerHTML = "Score: " + s.total
+			updateWin.innerHTML = "Level succeeded Well Play! <br> (Press enter)"
 			noLoop();
 	}
 }
