@@ -17,7 +17,11 @@ function setup(){
 	updateWin = document.getElementById('isWin');
 
   	s = new Snake();
+<<<<<<< HEAD
   	frameRate(17);
+=======
+  	frameRate(15);
+>>>>>>> cf6b46f6c1cf4784fe6a2a750519b588b22f7f55
   	pickLocation();
 }
 
@@ -30,7 +34,11 @@ function pickLocation(){
 
 
 function draw(){
+<<<<<<< HEAD
 	background('#232222');
+=======
+	background('#172EE1');
+>>>>>>> cf6b46f6c1cf4784fe6a2a750519b588b22f7f55
 	s.death();
 	s.update();
 	s.show();
@@ -42,8 +50,15 @@ function draw(){
 
 	if(s.eat(food)){pickLocation();}
 
+<<<<<<< HEAD
 	fill('#0ac3e8');
 	rect(food.x,food.y,scl,scl);
+=======
+	fill('#071057');
+	rect(food.x,food.y,scl,scl);
+
+	isWin();
+>>>>>>> cf6b46f6c1cf4784fe6a2a750519b588b22f7f55
 }
 
 function keyPressed(){
@@ -59,10 +74,18 @@ function keyPressed(){
 }
 
 function isWin(){
+<<<<<<< HEAD
 	if(s.total == 5){
 			chronoStop();
 			updateScore.innerHTML = "Score: " + s.total
 			updateWin.innerHTML = "Level succeeded Well Play! <br> (Press enter)"
+=======
+	if(s.total == 10){
+			chronoStop();
+			textSize(20);
+			text("Victoire",height/2-40,scl+10);
+			updateScore.innerHTML = "Score: " + s.total
+>>>>>>> cf6b46f6c1cf4784fe6a2a750519b588b22f7f55
 			noLoop();
 	}
 }
